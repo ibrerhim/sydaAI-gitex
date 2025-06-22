@@ -27,7 +27,7 @@ export function DashboardSidebar() {
           <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
             S
           </div>
-          <div className="font-bold text-lg">Smart-ops AI</div>
+          <div className="font-bold text-lg">Syda AI</div>
         </div>
       </SidebarHeader>
       <SidebarContent>

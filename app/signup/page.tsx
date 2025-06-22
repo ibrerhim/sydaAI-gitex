@@ -9,7 +9,7 @@ export default function SignupPage() {
     <div className="flex min-h-screen flex-col">
       <div className="flex flex-1 flex-col justify-center items-center p-4 md:p-8">
         <Link href="/" className="mb-8 flex items-center gap-2 font-bold text-2xl">
-          <span className="text-primary">Smart-ops</span> AI
+          <span className="text-primary">Syda</span> AI
         </Link>
 
         <Card className="w-full max-w-md">

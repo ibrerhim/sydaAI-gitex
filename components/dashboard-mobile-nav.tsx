@@ -27,7 +27,7 @@ export function DashboardMobileNav() {
       <div className="p-4 border-b">
         <Link href="/dashboard" className="flex items-center gap-2 font-bold">
           <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">S</div>
-          <span>Smart-ops AI</span>
+          <span>Syda AI</span>
         </Link>
       </div>
       <div className="flex-1 overflow-auto py-2">

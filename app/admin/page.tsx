@@ -14,7 +14,7 @@ export default function AdminPage() {
             <CardDescription>View businesses that have joined the waitlist</CardDescription>
           </CardHeader>
           <CardContent>
-            <p>Access the list of businesses interested in Smart-ops AI.</p>
+            <p>Access the list of businesses interested in Syda AI.</p>
           </CardContent>
           <CardFooter>
             <Button asChild>

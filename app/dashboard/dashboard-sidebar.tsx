@@ -34,7 +34,7 @@ export function DashboardSidebar() {
     <Sidebar>
       <SidebarHeader className="flex h-14 items-center border-b px-4">
         <Link href="/dashboard" className="flex items-center gap-2 font-bold text-xl">
-          <span className="text-primary">Smart-ops</span> AI
+          <span className="text-primary">Syda</span> AI
         </Link>
       </SidebarHeader>
       <SidebarContent>

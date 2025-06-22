@@ -17,7 +17,7 @@ export default function Home() {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full blur-sm opacity-70 animate-pulse"></div>
             <Bot className="w-8 h-8 text-white relative" />
           </div>
-          <h1 className="text-2xl font-bold text-white ml-3 tracking-tight">Smart-ops AI</h1>
+          <h1 className="text-2xl font-bold text-white ml-3 tracking-tight">Syda AI</h1>
         </div>
         <div className="hidden md:flex items-center gap-8">
           <Link href="/features" className="text-white/80 hover:text-white transition-colors">
@@ -58,8 +58,8 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl text-blue-50">
-                Smart-Ops is an AI startup dedicated to making AI-driven automation and insights seamless and accessible
-                for small and medium-sized businesses in Nigeria.
+                Syda is an AI startup dedicated to making AI-driven automation and insights seamless and accessible for
+                small and medium-sized businesses in Nigeria.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
@@ -242,7 +242,7 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to transform your business?</h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto text-blue-50">
-              Join thousands of SMEs using Smart-ops AI to automate customer interactions and boost sales.
+              Join thousands of SMEs using Syda AI to automate customer interactions and boost sales.
             </p>
             <Button
               asChild
@@ -267,7 +267,7 @@ export default function Home() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full blur-sm opacity-70"></div>
                     <Bot className="w-6 h-6 text-white relative" />
                   </div>
-                  <h2 className="text-2xl font-bold">Smart-ops AI</h2>
+                  <h2 className="text-2xl font-bold">Syda AI</h2>
                 </div>
                 <p className="text-slate-400">Redefining efficiency with intelligent solutions</p>
               </div>
@@ -335,7 +335,7 @@ export default function Home() {
               </div>
             </div>
             <div className="border-t border-slate-800 pt-8 text-center text-slate-400">
-              <p>© 2025 Smart-ops AI. All rights reserved.</p>
+              <p>© 2025 Syda AI. All rights reserved.</p>
             </div>
           </div>
         </footer>

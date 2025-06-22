@@ -30,7 +30,7 @@ export default function OnboardingPage() {
       <header className="border-b">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2 font-bold text-xl">
-            <span className="text-primary">Smart-ops</span> AI
+            <span className="text-primary">Syda</span> AI
           </div>
           <div className="flex items-center gap-4">
             <Link href="/dashboard">

@@ -117,7 +117,7 @@ export function WaitlistModal({
             <DialogHeader>
               <DialogTitle className="text-2xl">Join the Waitlist</DialogTitle>
               <DialogDescription>
-                Be among the first to experience Smart-ops AI for your business. Fill out the form below to join our
+                Be among the first to experience Syda AI for your business. Fill out the form below to join our
                 waitlist.
               </DialogDescription>
             </DialogHeader>
@@ -236,7 +236,7 @@ export function WaitlistModal({
                       <FormLabel>Additional Information (Optional)</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us more about your business and how you'd like to use Smart-ops AI"
+                          placeholder="Tell us more about your business and how you'd like to use Syda AI"
                           className="resize-none min-h-[100px]"
                           {...field}
                         />

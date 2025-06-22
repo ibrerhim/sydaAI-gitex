@@ -43,7 +43,7 @@ export function DashboardHeader() {
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
               S
             </div>
-            <span>Smart-ops AI</span>
+            <span>Syda AI</span>
           </Link>
         </div>
 

@@ -7,10 +7,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Smart-ops AI - AI Business Assistant",
+  title: "Syda AI - AI Business Assistant",
   description:
     "AI business assistant that automates customer interactions, order management, and payments on WhatsApp and Instagram",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
