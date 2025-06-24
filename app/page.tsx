@@ -58,7 +58,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl text-blue-50">
-                Smart-Ops is an agentic AI assistant designed to help SMEs across Africa sell easily social media platforms they already use. by simplifying and automating customer interactions ,order management and payment processing , all without needing any tech skills or expensive setups.
+                Smart-Ops is an agentic AI assistant designed to help SMEs across Africa sell easily on social media platforms they already use. by simplifying and automating customer interactions ,order management and payment processing , all without needing any tech skills or expensive setups.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
