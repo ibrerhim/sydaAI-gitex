@@ -1,14 +1,30 @@
 {
+  "name": "smart-ops-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start",
+    "vercel-build": "next build"
+  },
   "dependencies": {
     "@aws-sdk/credential-providers": "latest",
     "@hookform/resolvers": "latest",
     "@mongodb-js/zstd": "latest",
+    "@next/font": "^14.0.0",
+    "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "latest",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-label": "latest",
+    "@radix-ui/react-progress": "^1.0.3",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-sheet": "^1.0.4",
     "@radix-ui/react-slot": "latest",
     "@radix-ui/react-toast": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gcp-metadata": "latest",
@@ -25,6 +41,7 @@
     "snappy": "latest",
     "socks": "latest",
     "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "latest"
   },
@@ -32,6 +49,9 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
     "postcss": "^8.5",
     "typescript": "^5"
   }
