@@ -11,8 +11,8 @@ export function WaitlistSuccess({ onClose }: { onClose: () => void }) {
       </div>
       <h3 className="text-xl font-bold mb-2">You're on the list!</h3>
       <p className="text-muted-foreground mb-6 max-w-md">
-        Thank you for your interest in Syda AI. We'll be in touch soon with more information about our launch and how
-        you can get early access.
+        Thank you for your interest in Smart-ops AI. We'll be in touch soon with more information about our launch and
+        how you can get early access.
       </p>
       <Button onClick={onClose}>Close</Button>
     </div>

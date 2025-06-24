@@ -1,94 +1,64 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { RecentOrders } from "@/components/recent-orders"
+import type { Metadata } from "next"
 import { SalesOverview } from "@/components/sales-overview"
-import { InventoryStatus } from "@/components/inventory-status"
 import { CustomerInsights } from "@/components/customer-insights"
-import { Download } from "lucide-react"
+import { RecentOrders } from "@/components/recent-orders"
+import { InventoryStatus } from "@/components/inventory-status"
+import { ResponsiveDashboardLayout } from "@/components/responsive-dashboard-layout"
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description: "Example dashboard app built using the components.",
+}
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-6 max-w-[1600px] mx-auto">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-          <p className="text-muted-foreground">Welcome back, Usman's Store!</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <Button variant="outline">
-            <Download className="mr-2 h-4 w-4" />
-            Download Report
-          </Button>
-          <Button>Add New Product</Button>
-        </div>
-      </div>
-
-      {/* Overview Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Total Sales</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">₦1,245,000</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">+12.5% from last month</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Orders</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">156</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">+8.2% from last month</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Customers</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">89</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">+5.1% from last month</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Conversion Rate</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">24.8%</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">+2.3% from last month</p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Main Content */}
-      <Tabs defaultValue="overview" className="space-y-4">
-        <TabsList className="overflow-x-auto">
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="orders">Orders</TabsTrigger>
-          <TabsTrigger value="inventory">Inventory</TabsTrigger>
-          <TabsTrigger value="customers">Customers</TabsTrigger>
-        </TabsList>
-        <TabsContent value="overview" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-2">
-            <SalesOverview />
-            <CustomerInsights />
+    <div className="flex flex-col gap-4 p-4 md:p-8 pt-6">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="rounded-xl border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Total Revenue</h3>
           </div>
-          <RecentOrders />
-        </TabsContent>
-        <TabsContent value="orders">
-          <RecentOrders showAll={true} />
-        </TabsContent>
-        <TabsContent value="inventory">
-          <InventoryStatus />
-        </TabsContent>
-        <TabsContent value="customers">
-          <CustomerInsights detailed={true} />
-        </TabsContent>
-      </Tabs>
+          <div className="p-6 pt-0 flex items-center">
+            <div className="text-2xl font-bold">$45,231.89</div>
+            <div className="ml-2 text-xs text-green-500">+20.1%</div>
+          </div>
+        </div>
+        <div className="rounded-xl border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Subscriptions</h3>
+          </div>
+          <div className="p-6 pt-0 flex items-center">
+            <div className="text-2xl font-bold">+2350</div>
+            <div className="ml-2 text-xs text-green-500">+180.1%</div>
+          </div>
+        </div>
+        <div className="rounded-xl border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Sales</h3>
+          </div>
+          <div className="p-6 pt-0 flex items-center">
+            <div className="text-2xl font-bold">+12,234</div>
+            <div className="ml-2 text-xs text-green-500">+19%</div>
+          </div>
+        </div>
+        <div className="rounded-xl border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Active Now</h3>
+          </div>
+          <div className="p-6 pt-0 flex items-center">
+            <div className="text-2xl font-bold">+573</div>
+            <div className="ml-2 text-xs text-green-500">+201 since last hour</div>
+          </div>
+        </div>
+      </div>
+      <ResponsiveDashboardLayout className="md:grid-cols-2 lg:grid-cols-7">
+        <SalesOverview className="lg:col-span-4" />
+        <CustomerInsights className="lg:col-span-3" />
+      </ResponsiveDashboardLayout>
+      <ResponsiveDashboardLayout className="md:grid-cols-2 lg:grid-cols-7">
+        <RecentOrders className="lg:col-span-4" />
+        <InventoryStatus className="lg:col-span-3" />
+      </ResponsiveDashboardLayout>
     </div>
   )
 }

@@ -1,69 +1,128 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
-import { useTheme } from "next-themes"
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts"
 
 const data = [
-  { name: "Jan", sales: 400000 },
-  { name: "Feb", sales: 300000 },
-  { name: "Mar", sales: 500000 },
-  { name: "Apr", sales: 450000 },
-  { name: "May", sales: 470000 },
-  { name: "Jun", sales: 600000 },
-  { name: "Jul", sales: 650000 },
+  {
+    name: "Jan",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Feb",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Mar",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Apr",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "May",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Jun",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Jul",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Aug",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Sep",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Oct",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Nov",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: "Dec",
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
 ]
 
-export function SalesOverview() {
-  const { theme } = useTheme()
-  const isDark = theme === "dark"
+interface SalesOverviewProps {
+  className?: string
+}
+
+export function SalesOverview({ className }: SalesOverviewProps) {
+  const [isMounted, setIsMounted] = useState(false)
+  const [chartHeight, setChartHeight] = useState(350)
+  const [chartMargin, setChartMargin] = useState({
+    top: 20,
+    right: 30,
+    left: 20,
+    bottom: 20,
+  })
+
+  useEffect(() => {
+    setIsMounted(true)
+
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setChartHeight(250)
+        setChartMargin({ top: 15, right: 10, left: 0, bottom: 15 })
+      } else {
+        setChartHeight(350)
+        setChartMargin({ top: 20, right: 30, left: 20, bottom: 20 })
+      }
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   return (
-    <Card className="col-span-1 h-full">
+    <Card className={className}>
       <CardHeader>
-        <CardTitle>Sales Overview</CardTitle>
+        <CardTitle className="text-base sm:text-lg">Sales Overview</CardTitle>
         <CardDescription>Monthly sales performance</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="h-[300px] lg:h-[350px] xl:h-[400px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={data}
-              margin={{
-                top: 5,
-                right: 10,
-                left: 10,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={isDark ? "#374151" : "#e5e7eb"} />
-              <XAxis dataKey="name" tickLine={false} axisLine={false} stroke={isDark ? "#9ca3af" : "#6b7280"} />
+        {isMounted ? (
+          <ResponsiveContainer width="100%" height={chartHeight}>
+            <BarChart data={data} margin={chartMargin}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} />
+              <XAxis dataKey="name" tickLine={false} axisLine={false} fontSize={12} tickMargin={8} />
               <YAxis
-                tickFormatter={(value) => `₦${value / 1000}k`}
                 tickLine={false}
                 axisLine={false}
-                stroke={isDark ? "#9ca3af" : "#6b7280"}
+                fontSize={12}
+                tickFormatter={(value) => `$${value}`}
+                width={window.innerWidth < 640 ? 30 : 40}
               />
               <Tooltip
-                formatter={(value) => [`₦${value.toLocaleString()}`, "Sales"]}
-                labelFormatter={(label) => `Month: ${label}`}
-                contentStyle={{
-                  backgroundColor: isDark ? "hsl(var(--card))" : "#fff",
-                  borderColor: "hsl(var(--border))",
-                  color: isDark ? "#fff" : "#000",
-                }}
+                formatter={(value) => [`$${value}`, "Revenue"]}
+                labelStyle={{ fontSize: 12 }}
+                contentStyle={{ fontSize: 12 }}
               />
-              <Line
-                type="monotone"
-                dataKey="sales"
-                stroke="hsl(var(--primary))"
-                strokeWidth={2}
-                dot={{ r: 4, fill: "hsl(var(--primary))" }}
-                activeDot={{ r: 6, fill: "hsl(var(--primary))" }}
-              />
-            </LineChart>
+              <Legend wrapperStyle={{ fontSize: 12 }} />
+              <Bar dataKey="total" name="Revenue" fill="#6366f1" radius={[4, 4, 0, 0]} />
+            </BarChart>
           </ResponsiveContainer>
-        </div>
+        ) : (
+          <div className="flex items-center justify-center h-[350px]">
+            <div className="w-full h-full bg-muted/20 animate-pulse rounded-md"></div>
+          </div>
+        )}
       </CardContent>
     </Card>
   )

@@ -17,7 +17,7 @@ export function DashboardHeader() {
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-6">
       <div className="flex items-center gap-2 font-bold text-xl md:hidden">
-        <span className="text-primary">Syda</span> AI
+        <span className="text-primary">Smart-ops</span> AI
       </div>
 
       <div className="flex-1 md:grow-0 md:w-[200px] lg:w-[280px]">

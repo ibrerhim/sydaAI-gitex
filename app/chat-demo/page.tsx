@@ -22,7 +22,7 @@ export default function ChatDemo() {
     {
       role: "system",
       content:
-        "Welcome to Syda AI Demo! This simulates how our AI assistant would interact with your customers on WhatsApp or Instagram. Try asking about products, placing an order, or asking for support.",
+        "Welcome to Smart-ops AI Demo! This simulates how our AI assistant would interact with your customers on WhatsApp or Instagram. Try asking about products, placing an order, or asking for support.",
       timestamp: new Date(),
     },
   ])

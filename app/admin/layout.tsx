@@ -8,7 +8,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <header className="border-b">
         <div className="container flex h-16 items-center px-4">
           <Link href="/admin" className="font-bold text-xl">
-            Syda Admin
+            Smart-ops Admin
           </Link>
           <nav className="ml-auto flex gap-4">
             <Button variant="ghost" asChild>
